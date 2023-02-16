@@ -1,0 +1,25 @@
+<label> Server name</label>
+<input
+  type="text"
+  class="form-control"
+  [(ngModel)]="serverName">
+
+<!-- Property binding & event binding (click) event -->
+<button
+  class="btn btn-primary"
+  [disabled] = "!allowServerCreation"
+  (click)="onCreateServer()">Add Server</button>
+
+<hr />
+<!-- existing structural directive -->
+<p *ngIf ="isServerCreated; else noServerCreated">Server was created and serverName is {{ serverName }}</p>
+<ng-template #noServerCreated>
+  <p>No server was created...</p>
+</ng-template>
+
+
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
+<app-server></app-server>
+

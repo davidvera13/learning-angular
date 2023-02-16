@@ -1,0 +1,11 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <!-- STRING INTERPOLATION: value in {{ must be a string or resolved as string}}  -->
+      <p
+        [ngStyle]="{backgroundColor: getColor()}"
+        [ngClass]="getServerStatus()"
+      >Server with id {{ serverId }} is {{ getServerStatus() }}</p>
+    </div>
+  </div>
+</div>
