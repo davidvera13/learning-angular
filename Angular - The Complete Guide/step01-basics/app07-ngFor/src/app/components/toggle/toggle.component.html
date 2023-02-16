@@ -1,0 +1,17 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button class="btn btn-primary" (click)="showPassword = !showPassword">Display details</button>
+      <button class="btn btn-primary" (click)="onToggle()">Display details</button>
+      <p *ngIf="showPassword">Secret password: somePass</p>
+
+      <div
+        *ngFor="let log of logs; let id = index"
+        [ngStyle]="{backgroundColor: id >= 5 ? 'blue': 'yellow'}"
+      >
+        #{{id}} - {{ log }}
+      </div>
+    </div>
+   </div>
+</div>
+
