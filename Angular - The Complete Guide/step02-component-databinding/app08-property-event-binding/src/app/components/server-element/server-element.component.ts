@@ -7,9 +7,9 @@ import {Component, Input, OnInit} from '@angular/core';
 })
 export class ServerElementComponent implements OnInit {
   // we can use alias (not mandatory)
-  @Input('element') element: { type: string, name: string, content: string };
+  @Input('element') element: { type: string, name: string, content: string } | any;
   constructor() {
-    this.element = { "type": "", "name": "", "content": ""}
+    // this.element = { "type": "", "name": "", "content": ""}
   }
 
   ngOnInit() {

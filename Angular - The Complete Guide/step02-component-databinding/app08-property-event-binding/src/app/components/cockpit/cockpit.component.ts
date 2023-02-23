@@ -26,9 +26,9 @@ export class CockpitComponent {
   }
 
   onAddBlueprint() {
-    this.serverCreated.emit({
-      serverName: this.newServerName,
-      serverContent: this.newServerContent
+    this.blueprintCreated.emit({
+      blueprintName: this.newServerName,
+      blueprintContent: this.newServerContent
     });
     // this.serverElements.push({
     //   type: 'blueprint',
