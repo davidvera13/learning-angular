@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app02-using-bootstrap-css": {
+    "app08-property-event-binding": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app02-using-bootstrap-css",
+            "outputPath": "dist/app08-property-event-binding",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -25,7 +25,7 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap3/dist/css/bootstrap.min.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": []
@@ -61,10 +61,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app02-using-bootstrap-css:build:production"
+              "browserTarget": "app08-property-event-binding:build:production"
             },
             "development": {
-              "browserTarget": "app02-using-bootstrap-css:build:development"
+              "browserTarget": "app08-property-event-binding:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +72,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app02-using-bootstrap-css:build"
+            "browserTarget": "app08-property-event-binding:build"
           }
         },
         "test": {
