@@ -1,0 +1,26 @@
+<div class="container">
+  <app-cockpit
+    (serverCreated)="onServerAdded($event)"
+    (bpCreated) = "onBluePrintAdded($event)"
+  ></app-cockpit>
+  <hr>
+  <div class="row">
+    <div class="col-xs-12">
+      <button class="btn btn-primary" (click)="onChangeFirst()">Trigger changes</button>
+      <button class="btn btn-danger" (click)="onDestroyFirst()">Destroy...</button>
+
+      <app-server-element
+        *ngFor="let element of serverElements"
+        [element] = "element"
+        [serverName]="element.name"
+      >
+          <!-- will be injected in child component with ng-content -->
+          <p #contentParagraph>
+            <strong *ngIf="element.type === 'server'" style="color: red">{{ element.content }}</strong>
+            <em *ngIf="element.type === 'blueprint'">{{ element.content }}</em>
+          </p>
+      </app-server-element>
+    </div>
+  </div>
+</div>
+

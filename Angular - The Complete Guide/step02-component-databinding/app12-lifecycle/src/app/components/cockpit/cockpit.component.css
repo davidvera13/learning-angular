@@ -1,0 +1,4 @@
+/* it changes a parent component style because of view encapsulation*/
+label {
+  color: rebeccapurple;
+}
