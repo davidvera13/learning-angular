@@ -15,4 +15,10 @@ export class ShoppingListComponent {
       new Ingredient("Tomatoes", 10)
     ];
   }
+
+  onIngredientAdded(ingredient: Ingredient) {
+    if(ingredient != undefined) {
+      this.ingredients.push(ingredient);
+    }
+  }
 }
