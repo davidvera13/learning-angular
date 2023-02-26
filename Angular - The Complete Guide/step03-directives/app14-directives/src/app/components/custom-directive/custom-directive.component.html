@@ -1,0 +1,34 @@
+<H1>Custom</H1>
+<p appHighlight>Hello World</p>
+
+<p appHighlightAlter>
+  Using renderer2 with elementRef
+</p>
+<hr />
+<p appHighlightAlterv2>
+  Using appHighlightAlterv2 with renderer2 with elementRef
+</p>
+
+<p appHighlightCustomized
+   [eltHighlightedBackgroundColor] = "'red'"
+   [eltHighlightedTextColor]="'black'"
+   [eltBackgroundColor] = "'black'"
+   [eltTextColor] = "'red'" >
+  We can fully customize it ...
+</p>
+<p appHighlightCustomized
+   [eltHighlightedBackgroundColor] = "'pink'"
+   [eltHighlightedTextColor]="'black'"
+   [eltBackgroundColor] = "'transparent'"
+   [eltTextColor] = "'red'" >
+  We can fully customize it ...
+</p>
+
+<!-- we actually bind the directive to an alias having the same name as the directive...-->
+<!-- we can also omit property biding []-->
+<p appHighlightCustomizedv2 = "transparent"
+   eltHighlightedBackgroundColor = "pink"
+   [eltHighlightedTextColor]="'black'"
+   [eltTextColor] = "'red'" >
+  We can fully customize it ... :)
+</p>
