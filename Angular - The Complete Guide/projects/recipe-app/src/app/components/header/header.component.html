@@ -6,7 +6,9 @@
       </button>
       <a routerLink="/" class="navbar-brand">Recipe Book</a>
     </div>
-    <div class="navbar-collapse" [class.collapse]="collapsed" (window:resize)="collapsed = true">
+    <div class="navbar-collapse"
+         [class.collapse]="collapsed"
+         (window:resize)="collapsed = true">
 
     <div class="navbar-default">
       <ul class="nav navbar-nav">
@@ -15,8 +17,11 @@
         <li><a href="#" (click)="onSelect('shopping-list')">Shopping list</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" role="button">
+        <!-- using dropdown directive in the menu -->
+        <li class="dropdown" appDropdown>
+          <a href="#"
+             class="dropdown-toggle"
+             role="button">
             Manage <span class="caret">&nbsp;</span>
           </a>
           <ul class="dropdown-menu">
