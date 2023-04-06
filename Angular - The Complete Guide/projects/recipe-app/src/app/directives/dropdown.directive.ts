@@ -13,9 +13,9 @@ export class DropdownDirective {
   }
 
   // allow to close the menu by clicking anywhere
-  @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
-    this.isOpen = this.elementRef.nativeElement.contains(event.target) ? !this.isOpen : false;
-  }
+  // @HostListener('document:click', ['$event']) toggleOpen(event: Event) {
+  //   this.isOpen = this.elementRef.nativeElement.contains(event.target) ? !this.isOpen : false;
+  // }
 
 
   constructor(private elementRef: ElementRef) {

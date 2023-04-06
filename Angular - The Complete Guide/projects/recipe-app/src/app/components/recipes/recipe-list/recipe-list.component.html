@@ -22,11 +22,9 @@
 <!--          style="max-height: 50px">-->
 <!--      </span>-->
 <!--    </a>-->
-
-<!--    (recipeSelected)="onRecipeSelected($event)"-->
+<!--    (recipeSelected)="onRecipeSelected(recipe)" removed because of service use-->
     <app-recipe-item
       [recipe]="recipe"
-      (recipeSelected)="onRecipeSelected(recipe)"
     ></app-recipe-item>
   </div>
 </div>
