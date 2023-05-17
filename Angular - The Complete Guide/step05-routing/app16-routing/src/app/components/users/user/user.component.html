@@ -1,0 +1,9 @@
+<span *ngIf="user != undefined">
+<p>{{user.id}}</p>
+<p>{{ user.name }}</p>
+<hr />
+<a [routerLink]="['/users', 10, 'walter']">
+  User 10 / Walter should be loaded...
+</a>
+
+</span>

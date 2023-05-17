@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="col-xs-12 col-sm-4">
+    <div class="list-group">
+      <a
+        [routerLink]="['/servers', server.id]"
+        [queryParams]="{allowEdit: server.id === 3 ? '1' : '0'}"
+        fragment="loading"
+        href="#"
+        class="list-group-item"
+        *ngFor="let server of servers">
+        {{ server.name }}
+      </a>
+    </div>
+  </div>
+  <div class="col-xs-12 col-sm-4">
+    <!--
+      Relative path error .. be careful
+      ERROR Error: Uncaught (in promise):
+      Error: NG04002: Cannot match any routes.
+      URL Segment: 'servers/servers'
+    -->
+    <!--
+    <a routerLink="servers">Reload...</a>
+    -->
+    <!-- programmatic routing
+    <button class="btn btn-primary" (click)="onReload()">Reload ...</button>
+    -->
+    <!-- <a routerLink="/servers">Reload...</a>
+    <app-edit-server></app-edit-server>
+    <hr>
+    <app-server></app-server>
+     -->
+    <router-outlet></router-outlet>
+  </div>
+</div>
