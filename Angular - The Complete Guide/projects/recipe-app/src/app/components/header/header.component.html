@@ -13,20 +13,32 @@
     <div class="navbar-default">
       <ul class="nav navbar-nav">
         <!--  using click listener instead of routing   -->
-        <li><a href="#" (click)="onSelect('recipes')">Recipes</a></li>
-        <li><a href="#" (click)="onSelect('shopping-list')">Shopping list</a></li>
+        <!-- we pass the class to use if routerLink is active  -->
+        <li routerLinkActive="active">
+          <!-- <a href="#" (click)="onSelect('recipes')">Recipes</a>-->
+          <a routerLink="./recipes">Recipes</a>
+        </li>
+        <li  routerLinkActive="active">
+          <!-- <a href="#" (click)="onSelect('shopping-list')">Shopping list</a> -->
+          <a routerLink="./shopping-list">Shopping list</a>
+        </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <!-- using dropdown directive in the menu -->
         <li class="dropdown" appDropdown>
-          <a href="#"
-             class="dropdown-toggle"
-             role="button">
+          <a
+            style="cursor: pointer"
+            class="dropdown-toggle"
+            role="button">
             Manage <span class="caret">&nbsp;</span>
           </a>
           <ul class="dropdown-menu">
-            <li><a href="#">Save data</a></li>
-            <li><a href="#">Fetch data</a></li>
+            <li>
+              <a style="cursor: pointer">Save data</a>
+            </li>
+            <li>
+              <a style="cursor: pointer">Fetch data</a>
+            </li>
           </ul>
         </li>
       </ul>

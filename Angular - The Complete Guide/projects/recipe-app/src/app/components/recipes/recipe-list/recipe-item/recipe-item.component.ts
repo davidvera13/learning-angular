@@ -9,6 +9,7 @@ import {RecipeService} from "../../../../services/recipe.service";
 })
 export class RecipeItemComponent implements OnInit{
   @Input() recipe: Recipe | any;
+  @Input() index: number | any;
   //@Output() recipeSelected: EventEmitter<Recipe>;
   //@Output() recipeSelected: EventEmitter<void>;
 
@@ -19,12 +20,12 @@ export class RecipeItemComponent implements OnInit{
   ngOnInit(): void {
   }
 
-  onRecipeSelected() {
-    //this.recipeSelected.emit(this.recipe);
-    // we could pass the selected recipe But we already have the information
-    // in the parent component as we are in a loop and we pass information to the child component...
-    // this.recipeSelected.emit();
-    this.recipeService.recipeSelected.emit(this.recipe);
-  }
+  // onRecipeSelected() {
+  //   //this.recipeSelected.emit(this.recipe);
+  //   // we could pass the selected recipe But we already have the information
+  //   // in the parent component as we are in a loop and we pass information to the child component...
+  //   // this.recipeSelected.emit();
+  //   this.recipeService.recipeSelected.emit(this.recipe);
+  // }
 
 }

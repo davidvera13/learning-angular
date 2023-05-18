@@ -2,6 +2,7 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Recipe} from "../../../model/recipe.model";
 import {createObject} from "rxjs/internal/util/createObject";
 import {RecipeService} from "../../../services/recipe.service";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-list',
@@ -14,7 +15,9 @@ export class RecipeListComponent implements OnInit {
   // @Output() emittedRecipe: EventEmitter<Recipe>;
   recipes: Recipe[];
 
-  constructor(private recipeService: RecipeService) {
+  constructor(private recipeService: RecipeService,
+              private route: ActivatedRoute,
+              private router: Router) {
     // this.emittedRecipe = new EventEmitter<Recipe>();
     this.recipes = [];
   //   this.recipes = [
@@ -43,4 +46,7 @@ export class RecipeListComponent implements OnInit {
 
   }
 
+  onNewRecipeAdd() {
+    this.router.navigate(['create'], { relativeTo: this.route })
+  }
 }
