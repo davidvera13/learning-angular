@@ -12,19 +12,14 @@
 
     <div class="navbar-default">
       <ul class="nav navbar-nav">
-        <!--  using click listener instead of routing   -->
-        <!-- we pass the class to use if routerLink is active  -->
         <li routerLinkActive="active">
-          <!-- <a href="#" (click)="onSelect('recipes')">Recipes</a>-->
           <a routerLink="./recipes">Recipes</a>
         </li>
         <li  routerLinkActive="active">
-          <!-- <a href="#" (click)="onSelect('shopping-list')">Shopping list</a> -->
           <a routerLink="./shopping-list">Shopping list</a>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <!-- using dropdown directive in the menu -->
         <li class="dropdown" appDropdown>
           <a
             style="cursor: pointer"

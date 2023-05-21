@@ -1,7 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Recipe} from "../../../model/recipe.model";
 import {RecipeService} from "../../../services/recipe.service";
-import {ActivatedRoute, Params, Route, Router} from "@angular/router";
+import {ActivatedRoute, Params, Router} from "@angular/router";
 
 @Component({
   selector: 'app-recipe-detail',
@@ -9,7 +9,6 @@ import {ActivatedRoute, Params, Route, Router} from "@angular/router";
   styleUrls: ['./recipe-detail.component.css']
 })
 export class RecipeDetailComponent implements OnInit{
-  // @Input() recipe: Recipe | undefined;
   recipe: Recipe | undefined;
   id: number;
 
@@ -33,8 +32,8 @@ export class RecipeDetailComponent implements OnInit{
 
   onEditRecipe() {
     // good way to handle the routing
-    // this.router.navigate(['edit'], { relativeTo: this.route }).then();
+    this.router.navigate(['edit'], { relativeTo: this.route }).then();
     // we can build more complex routing path if required.
-    this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route }).then();
+    //this.router.navigate(['../', this.id, 'edit'], { relativeTo: this.route }).then();
   }
 }

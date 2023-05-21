@@ -10,7 +10,6 @@ export class RecipeService {
   private readonly recipes: Recipe[];
   recipeSelected: EventEmitter<Recipe>;
 
-
   constructor(private shoppingListService: ShoppingListService) {
     this.recipeSelected = new EventEmitter<Recipe>();
     this.recipes = [
@@ -37,7 +36,6 @@ export class RecipeService {
   }
 
   getRecipes(): Recipe[] {
-    // return this.recipes.slice(); => old way
     return [...this.recipes];
   }
 

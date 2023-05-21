@@ -1,16 +1,7 @@
-<!--
-<app-header (featureSelected)="onNavigate($event)"></app-header>
--->
 <app-header></app-header>
 <div class="container">
   <div class="row">
     <div class="col-md-12 pt-3">
-      <!-- we can use *ngIf to show one component based on header item clicked  -->
-      <!-- note: we should use routing for such operation  -->
-      <!--
-      <app-recipes *ngIf="feature == 'recipes'"></app-recipes>
-      <app-shopping-list *ngIf="feature == 'shopping-list'"></app-shopping-list>
-      -->
       <router-outlet></router-outlet>
     </div>
   </div>

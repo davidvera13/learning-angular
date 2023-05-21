@@ -21,10 +21,9 @@ export class ShoppingListComponent implements OnInit{
       this.ingredients = ingredients;
     });
   }
-  onIngredientAdded(ingredient: Ingredient) {
-    if(ingredient != undefined) {
-      this.ingredients.push(ingredient);
-    }
-  }
-
+  // onIngredientAdded(ingredient: Ingredient) {
+  //   if(ingredient != undefined) {
+  //     this.ingredients.push(ingredient);
+  //   }
+  // }
 }
