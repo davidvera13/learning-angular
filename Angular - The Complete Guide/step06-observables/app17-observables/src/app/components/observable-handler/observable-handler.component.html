@@ -1,0 +1,9 @@
+<p>Handling errors and completion </p>
+<p>Counter: {{ count }}</p>
+<p>Custom counter: {{ customCount }}</p>
+<span *ngIf="errorMessage != undefined">
+  <p>{{ errorMessage }}</p>
+</span>
+<span *ngIf="statusMessage != undefined">
+  <p>{{ statusMessage }}</p>
+</span>
