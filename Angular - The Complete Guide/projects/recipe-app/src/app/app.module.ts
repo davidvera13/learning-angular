@@ -14,7 +14,8 @@ import { DropdownDirective } from './directives/dropdown.directive';
 import {ShoppingListService} from "./services/shopping-list.service";
 import { RecipeStartComponent } from './components/recipes/recipe-start/recipe-start.component';
 import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edit.component';
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
+import {NgOptimizedImage} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -33,7 +34,9 @@ import {FormsModule} from "@angular/forms";
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgOptimizedImage
   ],
   providers: [],
   bootstrap: [AppComponent]
