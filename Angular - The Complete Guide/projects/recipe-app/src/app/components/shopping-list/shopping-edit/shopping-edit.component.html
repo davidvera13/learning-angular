@@ -1,42 +1,67 @@
 <div class="row">
   <div class="col-xs-12">
-    <form>
+    <!--
+      template drive form used here now
+      1. Add local refence which point to ngForm (#f)
+      2. Update onAdditem signature
+      3. Register controls with 'name' and add ngModel to controls
+      4. remove onAddItem from button and set the button type to submit
+    -->
+
+    <form (ngSubmit)="onAddItem(f)" #f="ngForm">
       <div class="row">
         <div class="col-sm-5 form-group">
           <label for="name">Name</label>
           <input
             type="text"
             id="name"
+            name="name"
+            ngModel
             class="form-control"
-            #nameInput>
+            required>
+            <!-- #nameInput> -->
         </div>
         <div class="col-sm-2 form-group">
           <label for="amount">Amount</label>
           <input
             type="number"
             id="amount"
+            name="amount"
+            ngModel
             class="form-control"
-            #amountInput>
-        </div>
+            pattern="^[1-9]+[0-9]*$"
+            required>
+          <!-- no more local reference used;  #amountInput> -->
       </div>
+    </div>
 
-      <div class="row">
-        <div class="col-xs-12">
-          <button
-            (click)="onAddItem()"
-            class="btn btn-success"
-            type="button">Add</button>
-          &nbsp;&nbsp;
-          <button
-            class="btn btn-danger"
-            type="button">Remove</button>
-          &nbsp;&nbsp;
-          <button
-            class="btn btn-primary"
-            type="button">Clear</button>
-        </div>
+    <div class="row">
+      <div class="col-xs-12">
+        <!-- (click)="onAddItem()" -->
+        <button
+          class="btn btn-success"
+          type="submit"
+          [disabled] = "!f.valid">
+          {{ onEditMode ? 'Update' : 'Add' }}
+        </button>
+        &nbsp;&nbsp;
+        <button
+          *ngIf="onEditMode"
+          class="btn btn-danger"
+          type="button"
+          (click)="onDelete()">
+          Remove
+        </button>
+        &nbsp;&nbsp;
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onClear()">
+          Clear
+        </button>
       </div>
+    </div>
 
-    </form>
-  </div>
+  </form>
+</div>
 </div>
