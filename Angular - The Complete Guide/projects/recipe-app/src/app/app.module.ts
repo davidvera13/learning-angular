@@ -21,9 +21,10 @@ import {AuthModule} from "./components/auth/auth.module";
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    AuthModule,
-    RecipesModule,
-    ShoppingListModule,
+    // remove module because of lazy loading use
+    //AuthModule,
+    //RecipesModule,
+    //ShoppingListModule,
     CommonsModule
   ],
   providers: [{

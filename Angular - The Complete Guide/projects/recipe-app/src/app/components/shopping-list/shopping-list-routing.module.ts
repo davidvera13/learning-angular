@@ -5,7 +5,8 @@ import {ShoppingListComponent} from "./shopping-list.component";
 
 const routes: Routes = [
   {
-    path: 'shopping-list',
+    //path: 'shopping-list',
+    path: '', // lazy loading
     component: ShoppingListComponent
   },
 ];

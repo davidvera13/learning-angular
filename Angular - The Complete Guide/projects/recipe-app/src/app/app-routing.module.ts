@@ -1,54 +1,23 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import {AppComponent} from "./app.component";
-import {RecipesComponent} from "./components/recipes/recipes.component";
-import {ShoppingListComponent} from "./components/shopping-list/shopping-list.component";
-import {RecipeStartComponent} from "./components/recipes/recipe-start/recipe-start.component";
-import {RecipeDetailComponent} from "./components/recipes/recipe-detail/recipe-detail.component";
-import {RecipeEditComponent} from "./components/recipes/recipe-edit/recipe-edit.component";
-import {RecipeResolverService} from "./services/recipe-resolver.service";
 import {AuthComponent} from "./components/auth/auth.component";
-import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: "full"},
-  // moved to RecipesRoutingModule
-  // {
-  //   path: 'recipes',
-  //   component: RecipesComponent,
-  //   canActivate: [AuthGuard],
-  //   children: [
-  //     {
-  //       path: '',
-  //       component: RecipeStartComponent
-  //     },
-  //     // create is passed BEFORE url that takes an id, bacause, angular will consider the segment as a segment...
-  //     {
-  //       path: 'create',
-  //       component: RecipeEditComponent
-  //     },
-  //     // resolver will resolve the route before loading it ... it will first load data first
-  //     // this way, by opening directly an url containing id of recipe, we retrieve the data before displaying the page
-  //     {
-  //       path: ':id',
-  //       component: RecipeDetailComponent,
-  //       resolve: [RecipeResolverService] },
-  //     {
-  //       path: ':id/edit',
-  //       component: RecipeEditComponent,
-  //       resolve: [RecipeResolverService]
-  //     },
-  //   ]
-  // },
-  // Moved to ShoppingListRoutingModule
-  // {
-  //   path: 'shopping-list',
-  //   component: ShoppingListComponent
-  // },
-  // handling authentication
+  {
+    path: 'recipes',
+    loadChildren: () => import('./components/recipes/recipes.module')
+      .then((mod) => mod.RecipesModule) //// lazy loading
+  },
+  {
+    path: 'shopping-list',
+    loadChildren: () => import('./components/shopping-list/shopping-list.module')
+      .then((mod) => mod.ShoppingListModule) //// lazy loading
+  },
   {
     path: 'auth',
-    component: AuthComponent
+      loadChildren: () => import('./components/auth/auth.module')
+      .then((mod) => mod.AuthModule) //// lazy loading
   },
 ];
 

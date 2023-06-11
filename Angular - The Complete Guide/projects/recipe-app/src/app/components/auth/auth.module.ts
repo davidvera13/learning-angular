@@ -14,9 +14,10 @@ import {RouterModule} from "@angular/router";
   imports: [
     //CommonModule,
     // no need to create a auth-routing.module, we pass the route directly
-    RouterModule.forRoot([
+    RouterModule.forChild([
       {
-        path: 'auth',
+        // path: 'auth',
+        path: '',
         component: AuthComponent
       },
     ]),
