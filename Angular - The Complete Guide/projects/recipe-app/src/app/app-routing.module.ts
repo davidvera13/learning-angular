@@ -12,37 +12,39 @@ import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: "full"},
-  {
-    path: 'recipes',
-    component: RecipesComponent,
-    canActivate: [AuthGuard],
-    children: [
-      {
-        path: '',
-        component: RecipeStartComponent
-      },
-      // create is passed BEFORE url that takes an id, bacause, angular will consider the segment as a segment...
-      {
-        path: 'create',
-        component: RecipeEditComponent
-      },
-      // resolver will resolve the route before loading it ... it will first load data first
-      // this way, by opening directly an url containing id of recipe, we retrieve the data before displaying the page
-      {
-        path: ':id',
-        component: RecipeDetailComponent,
-        resolve: [RecipeResolverService] },
-      {
-        path: ':id/edit',
-        component: RecipeEditComponent,
-        resolve: [RecipeResolverService]
-      },
-    ]
-  },
-  {
-    path: 'shopping-list',
-    component: ShoppingListComponent
-  },
+  // moved to RecipesRoutingModule
+  // {
+  //   path: 'recipes',
+  //   component: RecipesComponent,
+  //   canActivate: [AuthGuard],
+  //   children: [
+  //     {
+  //       path: '',
+  //       component: RecipeStartComponent
+  //     },
+  //     // create is passed BEFORE url that takes an id, bacause, angular will consider the segment as a segment...
+  //     {
+  //       path: 'create',
+  //       component: RecipeEditComponent
+  //     },
+  //     // resolver will resolve the route before loading it ... it will first load data first
+  //     // this way, by opening directly an url containing id of recipe, we retrieve the data before displaying the page
+  //     {
+  //       path: ':id',
+  //       component: RecipeDetailComponent,
+  //       resolve: [RecipeResolverService] },
+  //     {
+  //       path: ':id/edit',
+  //       component: RecipeEditComponent,
+  //       resolve: [RecipeResolverService]
+  //     },
+  //   ]
+  // },
+  // Moved to ShoppingListRoutingModule
+  // {
+  //   path: 'shopping-list',
+  //   component: ShoppingListComponent
+  // },
   // handling authentication
   {
     path: 'auth',
