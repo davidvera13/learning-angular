@@ -16,6 +16,8 @@ import { RecipeEditComponent } from './components/recipes/recipe-edit/recipe-edi
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {NgOptimizedImage} from "@angular/common";
 import {HttpClientModule} from "@angular/common/http";
+import { AuthComponent } from './components/auth/auth.component';
+import { LoadingSpinnerComponent } from './components/commons/loading-spinner/loading-spinner.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +31,9 @@ import {HttpClientModule} from "@angular/common/http";
     ShoppingEditComponent,
     DropdownDirective,
     RecipeStartComponent,
-    RecipeEditComponent
+    RecipeEditComponent,
+    AuthComponent,
+    LoadingSpinnerComponent
   ],
   imports: [
     BrowserModule,
