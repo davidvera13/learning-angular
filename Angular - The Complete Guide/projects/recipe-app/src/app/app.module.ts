@@ -6,10 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptorService} from "./services/interceptors/auth-interceptor.service";
-import {RecipesModule} from "./components/recipes/recipes.module";
-import {ShoppingListModule} from "./components/shopping-list/shopping-list.module";
 import {CommonsModule} from "./components/commons/commons.module";
-import {AuthModule} from "./components/auth/auth.module";
 
 @NgModule({
   declarations: [
