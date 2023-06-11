@@ -7,6 +7,7 @@ import { HeaderComponent } from './components/header/header.component';
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import {AuthInterceptorService} from "./services/interceptors/auth-interceptor.service";
 import {CommonsModule} from "./components/commons/commons.module";
+import {LoggingService} from "./services/logging.service";
 
 @NgModule({
   declarations: [
@@ -24,11 +25,14 @@ import {CommonsModule} from "./components/commons/commons.module";
     //ShoppingListModule,
     CommonsModule
   ],
-  providers: [{
-    provide: HTTP_INTERCEPTORS,
-    useClass: AuthInterceptorService,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: AuthInterceptorService,
+      multi: true
+    },
+    LoggingService
+  ],
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

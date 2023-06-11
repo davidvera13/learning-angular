@@ -4,6 +4,7 @@ import {DropdownDirective} from "../../directives/dropdown.directive";
 import {PlaceHolderDirective} from "../../directives/place-holder.directive";
 import {AlertComponent} from "./alert/alert.component";
 import {LoadingSpinnerComponent} from "./loading-spinner/loading-spinner.component";
+import {LoggingService} from "../../services/logging.service";
 
 
 
@@ -23,6 +24,10 @@ import {LoadingSpinnerComponent} from "./loading-spinner/loading-spinner.compone
     LoadingSpinnerComponent,
     DropdownDirective,
     PlaceHolderDirective
+  ],
+  providers: [
+    // 2 instance are used ... 
+    LoggingService
   ]
 })
 export class CommonsModule { }
