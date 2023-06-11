@@ -29,10 +29,20 @@
           </a>
           <ul class="dropdown-menu">
             <li>
-              <a style="cursor: pointer">Save data</a>
+              <a
+                style="cursor: pointer"
+                (click)="onSaveRecipes()"
+              >
+                Save data
+              </a>
             </li>
             <li>
-              <a style="cursor: pointer">Fetch data</a>
+              <a
+                style="cursor: pointer"
+                (click)="onFetchRecipes()"
+              >
+                Fetch data
+              </a>
             </li>
           </ul>
         </li>

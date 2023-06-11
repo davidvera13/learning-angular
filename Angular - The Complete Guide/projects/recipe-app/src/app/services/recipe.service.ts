@@ -8,36 +8,37 @@ import {Subject} from "rxjs";
   providedIn: 'root'
 })
 export class RecipeService {
-  private readonly recipes: Recipe[];
+  private recipes: Recipe[];
   recipesChanged: Subject<Recipe[]>
 
   constructor(private shoppingListService: ShoppingListService) {
     this.recipesChanged = new Subject<Recipe[]>();
-    this.recipes = [
-      new Recipe(
-        "Schnitzel",
-        "Nice speciality from Austria",
-        "assets/img/recipe01.jpg",
-        [
-          new Ingredient("Meat", 1),
-          new Ingredient("French fries", 120)
-        ]),
-      new Recipe(
-        "Cheese burger",
-        "Simply a cheese burger ...",
-        "assets/img/recipe02.jpg",
-        [
-          new Ingredient("Buns", 1),
-          new Ingredient("Meat", 1),
-          new Ingredient("Cheese", 1),
-          new Ingredient("Salad", 2),
-          new Ingredient("Ketchup", 1)
-        ]),
-    ];
+    this.recipes = [];
+    // this.recipes = [
+    //   new Recipe(
+    //     "Schnitzel",
+    //     "Nice speciality from Austria",
+    //     "assets/img/recipe01.jpg",
+    //     [
+    //       new Ingredient("Meat", 1),
+    //       new Ingredient("French fries", 120)
+    //     ]),
+    //   new Recipe(
+    //     "Cheese burger",
+    //     "Simply a cheese burger ...",
+    //     "assets/img/recipe02.jpg",
+    //     [
+    //       new Ingredient("Buns", 1),
+    //       new Ingredient("Meat", 1),
+    //       new Ingredient("Cheese", 1),
+    //       new Ingredient("Salad", 2),
+    //       new Ingredient("Ketchup", 1)
+    //     ]),
+    // ];
   }
 
   getRecipes(): Recipe[] {
-    return [...this.recipes];
+    return this.recipes.slice();
   }
 
   addIngredientToShoppingList(ingredients: Ingredient[]) {
@@ -59,6 +60,11 @@ export class RecipeService {
 
   deleteRecipe(index: number) {
     this.recipes.splice(index, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
     this.recipesChanged.next(this.recipes.slice());
   }
 }
