@@ -8,13 +8,24 @@ import {RecipeDetailComponent} from "./components/recipes/recipe-detail/recipe-d
 import {RecipeEditComponent} from "./components/recipes/recipe-edit/recipe-edit.component";
 import {RecipeResolverService} from "./services/recipe-resolver.service";
 import {AuthComponent} from "./components/auth/auth.component";
+import {AuthGuard} from "./guards/auth.guard";
 
 const routes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: "full"},
-  { path: 'recipes', component: RecipesComponent, children: [
-      { path: '', component: RecipeStartComponent},
+  {
+    path: 'recipes',
+    component: RecipesComponent,
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: '',
+        component: RecipeStartComponent
+      },
       // create is passed BEFORE url that takes an id, bacause, angular will consider the segment as a segment...
-      { path: 'create', component: RecipeEditComponent },
+      {
+        path: 'create',
+        component: RecipeEditComponent
+      },
       // resolver will resolve the route before loading it ... it will first load data first
       // this way, by opening directly an url containing id of recipe, we retrieve the data before displaying the page
       {
@@ -28,7 +39,10 @@ const routes: Routes = [
       },
     ]
   },
-  { path: 'shopping-list', component: ShoppingListComponent},
+  {
+    path: 'shopping-list',
+    component: ShoppingListComponent
+  },
   // handling authentication
   {
     path: 'auth',
