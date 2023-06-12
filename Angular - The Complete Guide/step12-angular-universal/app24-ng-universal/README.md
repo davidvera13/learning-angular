@@ -2,6 +2,25 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
 
+## Convert to universal
+Universal allow to load page on which user arrives to be like a classic html page. That means that the page can be then 
+referenced by search engines if required: 
+
+>  ng add @nguniversal/express-engine
+
+If we want to deploy : 
+
+> ng build && ng run app24-ng-universal:server
+> npm run build:ssr
+
+On deployment server:
+> npm install 
+> 
+> npm run serve:ssr
+
+Universal app require a server that allow running node js server
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
