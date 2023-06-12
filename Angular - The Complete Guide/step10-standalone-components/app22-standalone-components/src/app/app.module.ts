@@ -6,20 +6,24 @@ import { AppComponent } from './app.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { WelcomeComponent } from './components/welcome/welcome.component';
 import { DetailsComponent } from './components/welcome/details/details.component';
-import {SharedModule} from "./shared/shared/shared.module";
+//import {SharedModule} from "./shared/shared/shared.module";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    WelcomeComponent,
-    DetailsComponent
+    // AppComponent,
+    // WelcomeComponent,
+    // DetailsComponent
   ],
   imports: [
-    BrowserModule,
+    // BrowserModule,
     AppRoutingModule,
-    SharedModule
+    // SharedModule,
+    // DetailsComponent,
+    // WelcomeComponent
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  // bootstrap: [
+  //   AppComponent
+  // ]
 })
 export class AppModule { }

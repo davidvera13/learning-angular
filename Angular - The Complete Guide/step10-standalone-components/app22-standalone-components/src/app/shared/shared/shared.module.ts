@@ -3,14 +3,18 @@ import { CommonModule } from '@angular/common';
 import {HighlightDirective} from "../../directives/highlight.directive";
 
 
-
+/**
+ * the current module is no longer used at all
+ */
 @NgModule({
-  declarations: [HighlightDirective],
+  declarations: [
+    // HighlightDirective
+  ],
   imports: [
-    CommonModule
+    // CommonModule
   ],
   exports: [
-    HighlightDirective
+    // HighlightDirective
   ]
 })
 export class SharedModule { }
