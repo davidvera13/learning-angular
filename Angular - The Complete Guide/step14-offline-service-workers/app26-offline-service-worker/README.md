@@ -6,6 +6,23 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 > ng add @angular/pwa
 
+To build app : 
+
+>  ng build --configuration production
+
+We can add light weight http server : 
+
+>  npm install -g http-server
+
+To execute server: 
+
+> cd dist/appPath
+
+then 
+
+> http-server -p <portNumber>
+
+
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
