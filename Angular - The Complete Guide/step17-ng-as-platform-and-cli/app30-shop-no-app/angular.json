@@ -3,102 +3,6 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app29-ng-config": {
-      "projectType": "application",
-      "schematics": {},
-      "root": "",
-      "sourceRoot": "src",
-      "prefix": "app",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:browser",
-          "options": {
-            "outputPath": "dist/app29-ng-config",
-            "index": "src/index.html",
-            "main": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
-            ],
-            "scripts": []
-          },
-          "configurations": {
-            "staging" : {
-              "aot": true
-            },
-            "production": {
-              "budgets": [
-                {
-                  "type": "initial",
-                  "maximumWarning": "500kb",
-                  "maximumError": "1mb"
-                },
-                {
-                  "type": "anyComponentStyle",
-                  "maximumWarning": "2kb",
-                  "maximumError": "4kb"
-                }
-              ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "buildOptimizer": false,
-              "optimization": false,
-              "vendorChunk": true,
-              "extractLicenses": false,
-              "sourceMap": true,
-              "namedChunks": true
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "serve": {
-          "builder": "@angular-devkit/build-angular:dev-server",
-          "configurations": {
-            "production": {
-              "browserTarget": "app29-ng-config:build:production"
-            },
-            "development": {
-              "browserTarget": "app29-ng-config:build:development"
-            }
-          },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n",
-          "options": {
-            "browserTarget": "app29-ng-config:build"
-          }
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "@angular/material/prebuilt-themes/indigo-pink.css",
-              "src/styles.css"
-            ],
-            "scripts": []
-          }
-        }
-      }
-    },
     "backend": {
       "projectType": "application",
       "schematics": {},
@@ -190,29 +94,29 @@
         }
       }
     },
-    "shop": {
+    "frontend": {
       "projectType": "application",
       "schematics": {},
-      "root": "projects/shop",
-      "sourceRoot": "projects/shop/src",
+      "root": "projects/frontend",
+      "sourceRoot": "projects/frontend/src",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/shop",
-            "index": "projects/shop/src/index.html",
-            "main": "projects/shop/src/main.ts",
+            "outputPath": "dist/frontend",
+            "index": "projects/frontend/src/index.html",
+            "main": "projects/frontend/src/main.ts",
             "polyfills": [
               "zone.js"
             ],
-            "tsConfig": "projects/shop/tsconfig.app.json",
+            "tsConfig": "projects/frontend/tsconfig.app.json",
             "assets": [
-              "projects/shop/src/favicon.ico",
-              "projects/shop/src/assets"
+              "projects/frontend/src/favicon.ico",
+              "projects/frontend/src/assets"
             ],
             "styles": [
-              "projects/shop/src/styles.css"
+              "projects/frontend/src/styles.css"
             ],
             "scripts": []
           },
@@ -247,10 +151,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "shop:build:production"
+              "browserTarget": "frontend:build:production"
             },
             "development": {
-              "browserTarget": "shop:build:development"
+              "browserTarget": "frontend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -258,7 +162,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "shop:build"
+            "browserTarget": "frontend:build"
           }
         },
         "test": {
@@ -268,54 +172,21 @@
               "zone.js",
               "zone.js/testing"
             ],
-            "tsConfig": "projects/shop/tsconfig.spec.json",
+            "tsConfig": "projects/frontend/tsconfig.spec.json",
             "assets": [
-              "projects/shop/src/favicon.ico",
-              "projects/shop/src/assets"
+              "projects/frontend/src/favicon.ico",
+              "projects/frontend/src/assets"
             ],
             "styles": [
-              "projects/shop/src/styles.css"
+              "projects/frontend/src/styles.css"
             ],
             "scripts": []
-          }
-        }
-      }
-    },
-    "my-buttons": {
-      "projectType": "library",
-      "root": "projects/my-buttons",
-      "sourceRoot": "projects/my-buttons/src",
-      "prefix": "lib",
-      "architect": {
-        "build": {
-          "builder": "@angular-devkit/build-angular:ng-packagr",
-          "options": {
-            "project": "projects/my-buttons/ng-package.json"
-          },
-          "configurations": {
-            "production": {
-              "tsConfig": "projects/my-buttons/tsconfig.lib.prod.json"
-            },
-            "development": {
-              "tsConfig": "projects/my-buttons/tsconfig.lib.json"
-            }
-          },
-          "defaultConfiguration": "production"
-        },
-        "test": {
-          "builder": "@angular-devkit/build-angular:karma",
-          "options": {
-            "tsConfig": "projects/my-buttons/tsconfig.spec.json",
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ]
           }
         }
       }
     }
   },
   "cli": {
-    "analytics": false
+    "analytics": "cdab84d4-2fab-4fc9-88d5-e5e7bf5cabdd"
   }
 }
